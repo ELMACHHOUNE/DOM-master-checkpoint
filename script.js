@@ -24,11 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Like button
       const likeBtn = document.createElement("button");
-      likeBtn.innerHTML = "❤️";
+      likeBtn.innerHTML = "🖤"; // Default is black heart (unliked)
       likeBtn.className =
         "text-gray-500 hover:text-red-500 transition duration-300 text-xl";
       likeBtn.addEventListener("click", () => {
-        likeBtn.classList.toggle("text-red-500");
+        if (likeBtn.innerHTML === "🖤") {
+          likeBtn.innerHTML = "❤️"; // Change to red heart (liked)
+        } else {
+          likeBtn.innerHTML = "🖤"; // Change back to black heart (unliked)
+        }
       });
 
       // Minus button
